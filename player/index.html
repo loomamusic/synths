@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The player checks processors with the reference validators, which
+     compile WebAssembly: hence 'wasm-unsafe-eval'. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'">
+<title>Plugin player</title>
+<link rel="icon" href="icon.svg">
+<link rel="stylesheet" href="player.css">
+<script src="player.js" defer></script>
+</head>
+<body>
+<main>
+  <h1>Plugin player</h1>
+  <p>Plays plugins in this browser. A plugin shared as a link opens by itself. A plugin shared as a file is imported here, and then opens from the library.</p>
+
+  <section aria-labelledby="import-heading">
+    <h2 id="import-heading">Import</h2>
+    <div class="actions">
+      <label class="button">Import a plugin file <input id="import-file" type="file" accept=".html,text/html"></label>
+      <label class="button">Import a plugin folder <input id="import-folder" type="file" webkitdirectory></label>
+    </div>
+    <p class="warning">An imported plugin runs its own code in this player, with the player's permissions, and can see the other plugins imported here. Only import plugin files you trust.</p>
+    <p class="note">A folder is imported without its hidden files and folders, those whose names start with a dot.</p>
+  </section>
+
+  <section aria-labelledby="link-heading">
+    <h2 id="link-heading">Open a link</h2>
+    <form id="open-link" class="actions" novalidate>
+      <label for="link">Plugin link</label>
+      <input id="link" type="url" placeholder="https://…/index.html" autocomplete="url">
+      <button type="submit">Open link</button>
+    </form>
+  </section>
+
+  <p id="status" role="status"></p>
+  <div id="problems" role="alert"></div>
+
+  <section aria-labelledby="library-heading">
+    <h2 id="library-heading">Library</h2>
+    <div id="library"></div>
+  </section>
+</main>
+</body>
+</html>

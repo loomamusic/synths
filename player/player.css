@@ -1,0 +1,150 @@
+:root {
+    --bg: #17181b;
+    --panel: #22242a;
+    --text: #e9e9ec;
+    --muted: #a0a3ab;
+    --accent: #7fb4ff;
+    --warn: #f0c36b;
+    --error: #ff8f7a;
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.5 system-ui, sans-serif;
+}
+
+main {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+h1 {
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem;
+}
+
+h2 {
+    font-size: 1rem;
+    color: var(--muted);
+    margin: 0 0 0.75rem;
+}
+
+section {
+    background: var(--panel);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+a {
+    color: var(--accent);
+}
+
+.button {
+    display: inline-block;
+    background: #2f3440;
+    border-radius: 6px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+}
+
+.button:focus-within {
+    outline: 2px solid var(--accent);
+}
+
+/* The file input stays in the page, for keyboards and assistive technology,
+   but out of sight: its label is the button. */
+.button input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.warning {
+    color: var(--warn);
+    font-size: 0.9rem;
+}
+
+.note {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+#link {
+    flex: 1 1 16rem;
+    min-width: 0;
+    background: var(--bg);
+    color: var(--text);
+    border: 1px solid #3a3f4b;
+    border-radius: 6px;
+    padding: 0.35rem 0.5rem;
+    font: inherit;
+}
+
+button {
+    background: #2f3440;
+    color: var(--text);
+    border: 0;
+    border-radius: 6px;
+    padding: 0.35rem 0.8rem;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:focus-visible {
+    outline: 2px solid var(--accent);
+}
+
+#library li button {
+    float: right;
+    padding: 0.1rem 0.6rem;
+    font-size: 0.85rem;
+}
+
+#status {
+    margin: 1rem 0 0;
+}
+
+#status:empty,
+#problems:empty {
+    display: none;
+}
+
+#problems {
+    color: var(--error);
+    white-space: pre-wrap;
+}
+
+#library ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#library li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #2f3440;
+}
+
+#library li:last-child {
+    border-bottom: 0;
+}
+
+.details {
+    color: var(--muted);
+    font-size: 0.9rem;
+}

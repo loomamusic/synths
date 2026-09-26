@@ -1,0 +1,23 @@
+{
+  "contractVersion": 1,
+  "kind": "effect",
+  "name": "Tape Saturator",
+  "vendor": "loomamusic",
+  "uid": "com.loomamusic.tapesat",
+  "version": "0.1.0",
+  "io": { "inputs": 2, "outputs": 2 },
+  "latencySamples": 192,
+  "processor": "./dsp.wasm",
+  "maxStateBytes": 0,
+  "parameters": [
+    { "id": "drive", "name": "Drive", "type": "float", "min": 0, "max": 1, "default": 0.5, "unit": "" },
+    { "id": "tone", "name": "Tone", "type": "float", "min": 20, "max": 20000, "default": 8000, "unit": "Hz", "skew": "log" },
+    { "id": "oversample", "name": "Oversampling", "type": "enum", "options": ["None", "2x", "4x"], "default": 1 },
+    { "id": "character", "name": "Character", "type": "enum", "options": ["Clean", "Warm", "Crushed"], "default": 1 },
+    { "id": "bypass", "name": "Bypass", "type": "bool", "default": false }
+  ],
+  "meters": [
+    { "id": "in_level", "name": "Input level (dB)" },
+    { "id": "out_level", "name": "Output level (dB)" }
+  ]
+}

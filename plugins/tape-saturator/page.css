@@ -1,0 +1,100 @@
+:root {
+    --bg: #1d1914;
+    --panel: #2b2118;
+    --text: #efe6da;
+    --muted: #a8998a;
+    --accent: #e8a25a;
+    --track: #4a3d31;
+    color-scheme: dark;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.4 system-ui, sans-serif;
+}
+
+main {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem; /* room for the shim's strip at the top */
+}
+
+h1 {
+    font-size: 1.3rem;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.5rem;
+}
+
+#status {
+    color: var(--muted);
+    min-height: 1.4em;
+    margin: 0 0 1rem;
+}
+
+#status.error {
+    color: #ff8f7a;
+}
+
+#controls,
+#meters {
+    background: var(--panel);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+}
+
+#controls:empty,
+#meters:empty {
+    display: none;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 7rem 1fr 5rem;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.4rem 0;
+}
+
+.row output,
+.row .value {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    color: var(--muted);
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+}
+
+input[type="checkbox"] {
+    justify-self: start;
+    accent-color: var(--accent);
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+select {
+    background: var(--track);
+    color: var(--text);
+    border: 0;
+    border-radius: 4px;
+    padding: 0.25rem 0.4rem;
+    font: inherit;
+}
+
+.bar {
+    height: 0.6rem;
+    background: var(--track);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar > div {
+    height: 100%;
+    width: 0;
+    background: var(--accent);
+}

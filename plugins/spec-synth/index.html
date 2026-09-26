@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' blob: 'wasm-unsafe-eval'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spec Synth</title>
+  <script src="hostcontext-shim.js"></script>
+  <link rel="plugin-manifest" href="plugin.json">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Spec Synth</h1>
+      <p id="status" class="status" role="status">Loading…</p>
+    </header>
+
+    <section class="panel">
+      <h2>Parameters</h2>
+      <div id="controls" class="controls"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Meters</h2>
+      <div id="meters" class="meters"></div>
+    </section>
+
+    <section class="panel">
+      <div class="keys-header">
+        <h2>Keys</h2>
+        <div class="octave">
+          <button type="button" id="octave-down" aria-label="Octave down">−</button>
+          <span id="octave-label">C4</span>
+          <button type="button" id="octave-up" aria-label="Octave up">+</button>
+        </div>
+      </div>
+      <div id="keys" class="keys" aria-label="On-screen keyboard"></div>
+      <p class="hint">Click a key, or type A W S E D F T G Y H U J K. Lower on a key plays louder. The first click or key press starts audio.</p>
+    </section>
+
+    <section id="errors" class="panel errors" hidden>
+      <h2>Problems</h2>
+      <ul id="error-list"></ul>
+    </section>
+  </main>
+</body>
+</html>
