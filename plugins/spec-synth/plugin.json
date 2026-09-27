@@ -7,7 +7,7 @@
   "version": "0.1.0",
   "io": { "inputs": 0, "outputs": 2 },
   "latencySamples": 0,
-  "tailSamples": 3840000,
+  "tailSeconds": 10,
   "processor": "synth.wasm",
   "maxStateBytes": 0,
   "parameters": [
